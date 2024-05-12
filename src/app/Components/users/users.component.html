@@ -1,0 +1,36 @@
+
+<!-- <div class="users-list">
+    <div class="user-card" *ngFor="let user of users">
+      <img class="avatar" [src]="user.avatar" alt="Avatar">
+      <div class="user-info">
+        <p class="name">{{ user.first_name }} {{ user.last_name }}</p>
+        <p class="id">ID: {{ user.id }}</p>
+      </div>
+    </div>
+  
+   
+  </div> -->
+
+  <!-- <div *ngIf="loading" class="loading">Loading...</div> -->
+ <div class="d-flex justify-content-center">
+    <div class="user-card" *ngFor="let user of users" (click)="userDetails(user.id)" appHoverHighlight>
+        <img class="avatar" [src]="user.avatar" alt="Avatar">
+        <div class="user-info">
+          <p class="name">{{ user.first_name }} {{ user.last_name }}</p>
+          <p class="id">ID: {{ user.id }}</p>
+          
+        </div>
+      </div>
+</div> 
+
+
+
+
+ 
+
+
+  <div class="pagination">
+    <button (click)="prevPage()" [disabled]="currentPage === 1" class="pagination-btn">Previous</button>
+    <span class="page-info">Page {{ currentPage }} of {{ totalPages() }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages()" class="pagination-btn">Next</button>
+  </div>
